@@ -8,19 +8,31 @@
   src: url('../assets/fonts/Suisse-BP-Intl-Medium-2.ttf') format("truetype");
 }
 
-@mixin transition($what: all, $time: 0.2s, $how: ease) {
-    -webkit-transition: $what $time $how;
-    -moz-transition:    $what $time $how;
-    -ms-transition:     $what $time $how;
-    -o-transition:      $what $time $how;
-    transition:         $what $time $how;
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
 }
 
-$copy-font-stack:       Big-Caslon-Medium, serif;
-$heading-font-stack:    Suisse-BP-Intl-Medium, sans-serif;
-$primary-font-color:    #FF3127;
-$border-color:          #D8D8D8;
-$collection-pointer:    url('../assets/svg/pointer.svg'), auto;
+@mixin translateY ($y) {
+  @include transform(translateY($y));
+}
+
+@mixin transition($what: all, $time: 0.2s, $how: ease) {
+    -webkit-transition:     $what $time $how;
+    -moz-transition:        $what $time $how;
+    -ms-transition:         $what $time $how;
+    -o-transition:          $what $time $how;
+    transition:             $what $time $how;
+}
+
+$copy-font-stack:           Big-Caslon-Medium, serif;
+$heading-font-stack:        Suisse-BP-Intl-Medium, sans-serif;
+$primary-font-color:        #FF3127;
+$border-color:              #D8D8D8;
+$container-bottom-margin:   6.25vw;
+$collection-pointer:        url('../assets/svg/pointer.svg'), auto;
 
 .header-container{
   background-color: black;
@@ -30,6 +42,7 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
   align-items: flex-end;
   justify-content: flex-end;
   position: relative;
+  margin-bottom: $container-bottom-margin;
   .header-text-container{
     height: 100%;
     width: 50%;
@@ -46,8 +59,8 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
     h1{
       font-family: $heading-font-stack;
       font-size: 5.92vw;
-      margin-top: 25px;
-      margin-bottom: 17px;
+      margin-top: 2.4vw;
+      margin-bottom: 1.4vw;
     }
     h2, date{
       font-family: $copy-font-stack;
@@ -71,9 +84,8 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
 
 .events-container{
   width: 100%;
-  height: 33vw;
-  padding-top: 64px;
-  padding-bottom: 63px;
+  height: 20.8vw;
+  margin-bottom: $container-bottom-margin;
   .events-list{
     width: 100%;
     height: 100%;
@@ -91,8 +103,8 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
       h1{
         font-size: 3.5vw;
         font-family: $heading-font-stack;
-        margin-bottom: 5px;
-        margin-top: 10px;
+        margin-bottom: 0.4vw;
+        margin-top: 1vw;
         max-width: 16vw;
       }
       h2, date{
@@ -133,7 +145,6 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
       .collection-card-image{
         width: 100%;
         height: 100%;
-        background-color: yellow;
         position: relative;
         overflow: hidden;
         margin-bottom: 1vw;
@@ -143,18 +154,19 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
         height: auto;
       }
       .image-overlay{
-        width: 100%;
+        width: 110%;
         height: 100%;
         background-image: linear-gradient(0deg, #FF3127 63%, rgba(216,216,216,0.00) 100%);
         z-index: 10;
         position: absolute;
-        top: 58%;
-        left: 0;
-      }
-      .collection-card-image:hover .image-overlay{
+        @include translateY(60%);
         top: 0;
         left: 0;
-        @include transition (top, 0.2s, ease)
+        will-change: transform;
+      }
+      .collection-card-image:hover .image-overlay{
+        @include translateY(0%);
+        @include transition (transform, 0.2s, ease)
       }
       .collection-card-footnote{
         position: absolute;
@@ -163,8 +175,8 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
         margin-top: 1vw;
       }
       .collection-bullet{
-        width: 13px;
-        height: 13px;
+        width: 1.2vw;
+        height: 1.2vw;
         background-color: black;
         border-radius: 50%;
         margin-right: .8vw;
@@ -188,6 +200,3 @@ $collection-pointer:    url('../assets/svg/pointer.svg'), auto;
     padding-top: 2.8vw;
   }
 }
-
-/* Rectangle 3 Copy 4: */
-// background-image: linear-gradient(0deg, #FF3127 63%, rgba(216,216,216,0.00) 100%);
