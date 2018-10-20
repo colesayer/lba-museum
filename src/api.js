@@ -56,7 +56,7 @@ class Api{
         },
         {
           artist: "Valerie Export",
-          title: "Abrudung II",
+          title: "Abrundung II",
           date: "1976",
           footnote: "",
           image: "./assets/images/artwork_export_abrundung_ii.jpg",
