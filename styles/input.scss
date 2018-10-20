@@ -1,0 +1,193 @@
+@font-face {
+  font-family: Big-Caslon-Medium;
+  src: url('../assets/fonts/Big-Caslon-Medium.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: Suisse-BP-Intl-Medium;
+  src: url('../assets/fonts/Suisse-BP-Intl-Medium-2.ttf') format("truetype");
+}
+
+@mixin transition($what: all, $time: 0.2s, $how: ease) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+$copy-font-stack:       Big-Caslon-Medium, serif;
+$heading-font-stack:    Suisse-BP-Intl-Medium, sans-serif;
+$primary-font-color:    #FF3127;
+$border-color:          #D8D8D8;
+$collection-pointer:    url('../assets/svg/pointer.svg'), auto;
+
+.header-container{
+  background-color: black;
+  width: 100%;
+  height: 46vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  .header-text-container{
+    height: 100%;
+    width: 50%;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4vw;
+    color: $primary-font-color;
+    h1{
+      font-family: $heading-font-stack;
+      font-size: 5.92vw;
+      margin-top: 25px;
+      margin-bottom: 17px;
+    }
+    h2, date{
+      font-family: $copy-font-stack;
+      font-size: 2vw;
+    }
+  }
+  .header-image-container{
+    height: 100%;
+    width: 57%;
+    z-index: 1;
+    align-self: flex-end;
+    padding-top: 3vw;
+    padding-right: 4vw;
+    padding-bottom: 3vw;
+    .header-image{
+      width: 52.7vw;
+      height:auto;
+    }
+  }
+}
+
+.events-container{
+  width: 100%;
+  height: 33vw;
+  padding-top: 64px;
+  padding-bottom: 63px;
+  .events-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: $primary-font-color;
+    .event-card{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-left: 1vw solid $border-color;
+      padding-left: 1vw;
+      h1{
+        font-size: 3.5vw;
+        font-family: $heading-font-stack;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        max-width: 16vw;
+      }
+      h2, date{
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+.collection-container{
+  padding-left: 4vw;
+  padding-right: 4vw;
+  .collection-title {
+    font-family: $heading-font-stack;
+    font-size: 6vw;
+    margin-bottom: 2.3vw;
+  }
+  .collection-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    .collection-card{
+      margin-bottom: 6.25vw;
+      cursor: $collection-pointer;
+      h1, h2{
+        font-family: $copy-font-stack;
+        font-size: 2vw;
+        color: $primary-font-color;
+        line-height: 1.2em;
+      }
+      h3{
+        font-family: $copy-font-stack;
+        font-size: 1.4vw;
+        color: $primary-font-color;
+      }
+      .collection-card-image{
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1vw;
+      }
+      img {
+        width: 21.5vw;
+        height: auto;
+      }
+      .image-overlay{
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(0deg, #FF3127 63%, rgba(216,216,216,0.00) 100%);
+        z-index: 10;
+        position: absolute;
+        top: 58%;
+        left: 0;
+      }
+      .collection-card-image:hover .image-overlay{
+        top: 0;
+        left: 0;
+        @include transition (top, 0.2s, ease)
+      }
+      .collection-card-footnote{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        margin-top: 1vw;
+      }
+      .collection-bullet{
+        width: 13px;
+        height: 13px;
+        background-color: black;
+        border-radius: 50%;
+        margin-right: .8vw;
+      }
+    }
+  }
+}
+
+.footer-container{
+  width: 100%;
+  height: 14vw;
+  border-top: 1vw solid $border-color;
+  font-family: $heading-font-stack;
+  font-size: 2vw;
+  .footer-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 2.8vw;
+  }
+}
+
+/* Rectangle 3 Copy 4: */
+// background-image: linear-gradient(0deg, #FF3127 63%, rgba(216,216,216,0.00) 100%);
