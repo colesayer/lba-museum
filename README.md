@@ -10,3 +10,4 @@ I utilized JS ES6 class syntax to organize javascript by pages for future expand
 I used SASS to preprocess the CSS, assigning the page's fonts, colors, and vertical margins to variables allowing for easy adjustments, and mixins to abstract away some of the cross-browser syntax. Everything is responsive, including typography. 
 
 I also leveraged CSS browser optimizations to handle performance on rollovers.
+ 
