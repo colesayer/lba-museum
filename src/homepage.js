@@ -4,8 +4,9 @@ class Homepage{
   }
 
   fetchContent(){
-    const homepageContent = this.api.fetchHomepage()
+    const homepageContent = this.api.fetchPage("homepage")
     const {header, events, collection} = homepageContent
+
     this.initializeHeader(header)
     this.initializeEvents(events)
     this.initializeCollection(collection)
@@ -13,8 +14,8 @@ class Homepage{
 
   initializeHeader(header){
     const {subtitle, title, date, image, imageAlt} = header
-
     const headerTextContainer = document.getElementById('header-text-container')
+    
     headerTextContainer.innerHTML = `
     <h2>${subtitle}</h2>
     <h1>${title}</h1>
