@@ -78,7 +78,7 @@ class Api{
               title: "Decoy in D",
               date: "2008",
               footnote: "",
-              image: "./assets/images/artwork_marten_decoy_in_d.png",
+              image: "./assets/images/artwork_marten_decoy_in_d.jpg",
               imageAlt: "Helen Marten: Decoy in D",
             },
             {
