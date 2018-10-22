@@ -8,7 +8,8 @@ class Api{
     const fakeDb = {
       homepage: {
           header: {
-            title: "Joseph Buckley: Traitor Muscle",
+            titleLineOne: "Joseph Buckley:",
+            titleLineTwo: "Traitor Muscle",
             subtitle: "Current Exhibition",
             date: "September 22 - November 03 2018",
             image: "assets/images/exhibition_buckley_traitor_muscle.jpg",
