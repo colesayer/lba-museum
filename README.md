@@ -1,5 +1,5 @@
 ## LBA Museum Page
-<a href="https://museum-lba.herokuapp.com/">https://museum-lba.herokuapp.com/</a> (if the link seems unresponsive, give it time! That is the heroku server spinning up.)
+<a href="https://museum-lba.herokuapp.com/">https://museum-lba.herokuapp.com/</a> (If the link seems unresponsive, give it time! That is the heroku server spinning up.)
 
 
 ### Description
