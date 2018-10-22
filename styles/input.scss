@@ -45,26 +45,36 @@ $collection-pointer:        url('../assets/svg/pointer.svg'), auto;
   margin-bottom: $container-bottom-margin;
   .header-text-container{
     height: 100%;
-    width: 50%;
+    width: 43%;
     z-index: 10;
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 4vw;
     color: $primary-font-color;
-    h1{
-      font-family: $heading-font-stack;
-      font-size: 5.92vw;
-      margin-top: 2.4vw;
-      margin-bottom: 1.4vw;
-    }
-    h2, date{
-      font-family: $copy-font-stack;
-      font-size: 2vw;
+    .header-text{
+      display: inline-flex;
+      flex-direction: column;
+      width: fit-content;
+      position: absolute;
+      right: -1.5vw;
+      .header-title{
+        margin-top: 2.4vw;
+        margin-bottom: 1.4vw;
+        h1{
+          font-family: $heading-font-stack;
+          font-size: 5.92vw;
+
+        }
+      }
+      h2, date{
+        font-family: $copy-font-stack;
+        font-size: 2vw;
+        display: inline-block;
+      }
     }
   }
   .header-image-container{

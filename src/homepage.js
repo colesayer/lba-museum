@@ -13,13 +13,18 @@ class Homepage{
   }
 
   initializeHeader(header){
-    const {subtitle, title, date, image, imageAlt} = header
+    const {subtitle, titleLineOne, titleLineTwo, date, image, imageAlt} = header
     const headerTextContainer = document.getElementById('header-text-container')
-    
+
     headerTextContainer.innerHTML = `
-    <h2>${subtitle}</h2>
-    <h1>${title}</h1>
-    <date>${date}</date>
+    <div class="header-text">
+      <h2>${subtitle}</h2>
+      <div class="header-title">
+        <h1>${titleLineOne}</h1>
+        <h1>${titleLineTwo}</h1>
+      </div>
+      <date>${date}</date>
+    </div>
     `
 
     const headerImageContainer = document.getElementById('header-image-container')

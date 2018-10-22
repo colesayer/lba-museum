@@ -15,25 +15,32 @@
   margin-bottom: 6.25vw; }
   .header-container .header-text-container {
     height: 100%;
-    width: 50%;
+    width: 43%;
     z-index: 10;
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 4vw;
     color: #FF3127; }
-    .header-container .header-text-container h1 {
-      font-family: Suisse-BP-Intl-Medium, sans-serif;
-      font-size: 5.92vw;
-      margin-top: 2.4vw;
-      margin-bottom: 1.4vw; }
-    .header-container .header-text-container h2, .header-container .header-text-container date {
-      font-family: Big-Caslon-Medium, serif;
-      font-size: 2vw; }
+    .header-container .header-text-container .header-text {
+      display: inline-flex;
+      flex-direction: column;
+      width: fit-content;
+      position: absolute;
+      right: -1.5vw; }
+      .header-container .header-text-container .header-text .header-title {
+        margin-top: 2.4vw;
+        margin-bottom: 1.4vw; }
+        .header-container .header-text-container .header-text .header-title h1 {
+          font-family: Suisse-BP-Intl-Medium, sans-serif;
+          font-size: 5.92vw; }
+      .header-container .header-text-container .header-text h2, .header-container .header-text-container .header-text date {
+        font-family: Big-Caslon-Medium, serif;
+        font-size: 2vw;
+        display: inline-block; }
   .header-container .header-image-container {
     height: 100%;
     width: 57%;
